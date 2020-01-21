@@ -15,6 +15,7 @@ def regist(request):
             cuebuser = Cubeuser()
             cuebuser.username = cleaned_data.get('username')
             cuebuser.password = make_password(cleaned_data.get('password'))
+            
             cuebuser.save()
             return HttpResponseRedirect('/')
         else:
