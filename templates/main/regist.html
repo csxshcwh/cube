@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="zh-hans">
     <head>
         <meta charset="utf-8" >
         <title>HTML5用户注册页面示例</title>
@@ -13,55 +13,66 @@
             <!--水平线-->
             <hr />
             <!--表单-->
-            <form method="post" action="" autocomplete="on">
+            <form method="post" action="" autocomplete="on" enctype="multipart/form-data">
                 {% csrf_token %}
                 <label>&nbsp用户名：
                     <input type="text" placeholder="请输入用户名" name="username" required />
+                    <span>{{ error.username }}</span>
                 </label>
                 <br />
                 <label>&nbsp密　码：
                     <input type="password" placeholder="请输入密码" name="password" required />
+                    <span>{{ error.password }}</span>
                 </label>
                 <br />
                 <label>&nbsp确　认：
                     <input type="password" placeholder="请再次输入密码" name="repwd" required />
+                    <span>{{ error.repwd }}</span>
                 </label>
                 <br />
                 <hr />
                 <label>&nbsp姓　名：
                     <input type="text" placeholder="请输入真实姓名" name="truename" required />
+                    <span>{{ error.truename }}</span>
                 </label>
                 <br />
 
                 <label>&nbsp性　别：&nbsp&nbsp&nbsp&nbsp
-                    <label><input name="sex" type="radio" value="m" />女 </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <label><input name="sex" type="radio" value="f" />男 </label>&nbsp&nbsp&nbsp&nbsp
+                    <label><input name="sex" type="radio" value="2" />女 </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <label><input name="sex" type="radio" value="1" />男 </label>&nbsp&nbsp&nbsp&nbsp
+                    <span>{{ error.sex }}</span>
                 </label>
                 <br />
                 <label>出生日期：
                 	<input type="date" name="birthday" id="birthday" value="" />
+                    <span>{{ error.birthday }}</span>
                 </label>
                 <br />
                 <label>邮寄地址：
                 	<input type="text" placeholder="请输入邮寄地址"  name="address" id="address" value="" required=""/>
+                    <span>{{ error.address }}</span>
                 </label>
                 <br />
                 <label>*邮&nbsp&nbsp&nbsp&nbsp&nbsp箱：
                     <input type="email" placeholder="请输入电子邮箱" name="email" />
+                    <span>{{ error.email }}</span>
                 </label>
                 <br />
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<label>头像照片：
                 	<input type="file" value="" name="picture" required/>
+                <span>{{ error.picture }}</span>
                 </label>
                 <br />
 
                 <hr />
-                <label>父/母姓名：
+                <label>紧急联络人姓名：
                     <input type="text" placeholder="请输入紧急联络人姓名" name="emergencyname" required />
+                    <span>{{ error.emergencyname }}</span>
                 </label>
                 <br />
-                <label>&nbsp&nbsp&nbsp手&nbsp机&nbsp号：
+                <label>紧急联络电话：
                     <input type="text" placeholder="请输入紧急联络电话" name="emergencyphone" required />
+                    <span>{{ error.emergencyphone }}</span>
                 </label>
                 <br />
 

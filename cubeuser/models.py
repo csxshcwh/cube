@@ -16,7 +16,7 @@ class Cubeuser(AbstractUser):
     idnum = models.CharField(max_length=20, default='未知', verbose_name='身份证号码')
     emergencyname = models.CharField(max_length=10, default='未知', verbose_name='紧急联络人姓名')
     emergencyphone = models.CharField(max_length=20, default='未知', verbose_name='紧急联络人电话')
-    picture = models.ImageField(upload_to="IDimg/", null=True, blank=True)
+    picture = models.ImageField(upload_to="IDimg/", null=True, blank=True, verbose_name='图片')
     birthday = models.DateField(verbose_name='出生日期', null=True, blank=True)
     #area
     address = models.CharField(max_length=100, default='未知', verbose_name='邮寄地址')
